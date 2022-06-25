@@ -14,7 +14,7 @@ class CustomLeadingIcon extends StatelessWidget {
     Key? key,
     this.lineHeight = 30,
     this.circleRadius = 12.5,
-    this.thickness = .5,
+    this.thickness = 1,
     this.color = primaryColor,
     this.fromText,
     this.toText,

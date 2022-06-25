@@ -7,8 +7,6 @@ import '../component/connect_with_me.dart';
 import '../component/history.dart';
 import '../component/project.dart';
 import '../component/skill.dart';
-import 'section/left_section.dart';
-import 'section/right_section.dart';
 
 class WebView extends StatelessWidget {
   final PersonalInformationResponse personalInformationResponse;
@@ -18,47 +16,49 @@ class WebView extends StatelessWidget {
     required this.personalInformationResponse,
   }) : super(key: key);
 
+  final double sizedBoxHeight = 30;
+
   @override
   Widget build(BuildContext context) {
-    return Row(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        LeftSection(
-          children: [
-            AboutMe(aboutMe: personalInformationResponse.aboutMe),
-            ConnectWithMe(
-              connectWithMe: personalInformationResponse.connectWithMeResponse,
-            ),
-          ],
-        ),
-        RightSection(
-          children: [
-            History(
-              workHistorySectionTitle,
-              historyList: personalInformationResponse.workHistory,
-            ),
-            Skill(
-              developmentSkillSectionTitle,
-              skillList: personalInformationResponse.developmentSkill,
-            ),
-            Skill(
-              softwareSkillSectionTitle,
-              skillList: personalInformationResponse.softwareSkill,
-            ),
-            Project(
-              projectList: personalInformationResponse.project,
-            ),
-            History(
-              educationSectionTitle,
-              historyList: personalInformationResponse.education,
-            ),
-            History(
-              certificationSectionTitle,
-              historyList: personalInformationResponse.certification,
-            ),
-          ],
-        ),
-      ],
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 50),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          AboutMe(aboutMe: personalInformationResponse.aboutMe),
+          SizedBox(height: sizedBoxHeight),
+          History(
+            workHistorySectionTitle,
+            historyList: personalInformationResponse.workHistory,
+          ),
+          SizedBox(height: sizedBoxHeight),
+          Skill(
+            developmentSkillSectionTitle,
+            skillList: personalInformationResponse.developmentSkill,
+          ),
+          SizedBox(height: sizedBoxHeight),
+          Skill(
+            softwareSkillSectionTitle,
+            skillList: personalInformationResponse.softwareSkill,
+          ),
+          SizedBox(height: sizedBoxHeight),
+          Project(projectList: personalInformationResponse.project),
+          SizedBox(height: sizedBoxHeight),
+          History(
+            educationSectionTitle,
+            historyList: personalInformationResponse.education,
+          ),
+          SizedBox(height: sizedBoxHeight),
+          History(
+            certificationSectionTitle,
+            historyList: personalInformationResponse.certification,
+          ),
+          SizedBox(height: sizedBoxHeight),
+          ConnectWithMe(
+            connectWithMe: personalInformationResponse.connectWithMeResponse,
+          ),
+        ],
+      ),
     );
   }
 }

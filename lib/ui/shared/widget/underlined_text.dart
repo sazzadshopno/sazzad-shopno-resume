@@ -37,8 +37,8 @@ class UnderlineText extends StatelessWidget {
         SizedBox(
           width: indent,
           child: const Divider(
-            thickness: 2,
-            color: Colors.black,
+            thickness: 1,
+            color: primaryColor,
           ),
         ),
       ],

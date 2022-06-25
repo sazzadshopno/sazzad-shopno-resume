@@ -16,43 +16,45 @@ class MobileView extends StatelessWidget {
     required this.personalInformationResponse,
   }) : super(key: key);
 
+  final double sizedBoxHeight = 30;
+
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(16.0),
+      padding: const EdgeInsets.all(20.0),
       child: Column(
         children: [
           AboutMe(aboutMe: personalInformationResponse.aboutMe),
-          const SizedBox(height: 10),
+          SizedBox(height: sizedBoxHeight),
           History(
             workHistorySectionTitle,
             historyList: personalInformationResponse.workHistory,
           ),
-          const SizedBox(height: 10),
+          SizedBox(height: sizedBoxHeight),
           Skill(
             developmentSkillSectionTitle,
             skillList: personalInformationResponse.developmentSkill,
           ),
-          const SizedBox(height: 10),
+          SizedBox(height: sizedBoxHeight),
           Skill(
             softwareSkillSectionTitle,
             skillList: personalInformationResponse.softwareSkill,
           ),
-          const SizedBox(height: 10),
+          SizedBox(height: sizedBoxHeight),
           Project(
             projectList: personalInformationResponse.project,
           ),
-          const SizedBox(height: 10),
+          SizedBox(height: sizedBoxHeight),
           History(
             educationSectionTitle,
             historyList: personalInformationResponse.education,
           ),
-          const SizedBox(height: 10),
+          SizedBox(height: sizedBoxHeight),
           History(
             certificationSectionTitle,
             historyList: personalInformationResponse.certification,
           ),
-          const SizedBox(height: 10),
+          SizedBox(height: sizedBoxHeight),
           ConnectWithMe(
             connectWithMe: personalInformationResponse.connectWithMeResponse,
           ),

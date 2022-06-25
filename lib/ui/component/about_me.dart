@@ -18,8 +18,7 @@ class AboutMe extends StatelessWidget {
         const SizedBox(height: 10),
         UnderlineText(text: aboutMe.name, subText: "aka ${aboutMe.nickName}"),
         _buildRoleTextWidget(role: aboutMe.role),
-        const SizedBox(height: 20),
-        const UnderlineText(text: aboutMeSectionTitle),
+        const SizedBox(height: 10),
         _buildAboutMeTextWidget(text: aboutMe.description),
       ],
     );
